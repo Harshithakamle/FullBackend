@@ -6,9 +6,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
-import java.util.Date;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 @Entity
 @Table(name="posts")
@@ -32,5 +30,5 @@ public class Post {
     private User user;
 
     @OneToMany(mappedBy="post",cascade=CascadeType.ALL)
-    private Set<Comment> comments=new HashSet<>();
+    private List<Comment> comments=new ArrayList<>();
 }
