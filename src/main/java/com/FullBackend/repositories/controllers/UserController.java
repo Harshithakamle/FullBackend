@@ -1,10 +1,11 @@
-package com.FullBackend.controllers;
+package com.FullBackend.repositories.controllers;
 
 import com.FullBackend.payloads.UserDto;
 import com.FullBackend.services.UserService;
 import org.apache.coyote.Response;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -31,6 +32,7 @@ public class UserController {
         UserDto userDto1 = userService.updateUser(userDto, id);
         return ResponseEntity.ok(userDto1);
     }
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/{id}")
     public ResponseEntity<String> deleteTheUser(@PathVariable("id") long id){
         userService.deleteUser(id);

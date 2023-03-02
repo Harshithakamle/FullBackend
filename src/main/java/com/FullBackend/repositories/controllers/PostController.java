@@ -1,4 +1,4 @@
-package com.FullBackend.controllers;
+package com.FullBackend.repositories.controllers;
 
 import com.FullBackend.payloads.PostDto;
 import com.FullBackend.services.PostService;

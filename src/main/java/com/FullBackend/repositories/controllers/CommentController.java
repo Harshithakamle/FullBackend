@@ -1,4 +1,4 @@
-package com.FullBackend.controllers;
+package com.FullBackend.repositories.controllers;
 
 import com.FullBackend.entities.Comment;
 import com.FullBackend.payloads.CommentDto;
